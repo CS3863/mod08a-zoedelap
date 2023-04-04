@@ -12,6 +12,9 @@ public class UseData : MonoBehaviour
     public GameObject myCube; //prefab
     int cubeCount; //variable 
 
+    private float startDelay = 2.0f;
+    private float timeInterval = 0.5f;
+
     void Awake()
     {
         data = CSVReader.Read("udata");//udata is the name of the csv file 
@@ -35,7 +38,7 @@ public class UseData : MonoBehaviour
             Debug.Log("cubeCount " +cubeCount);
         }
 
-        InvokeRepeating("spawnObj", 1.0f, 1.5f);
+        InvokeRepeating("spawnObj", startDelay, timeInterval);
 
     }
 
