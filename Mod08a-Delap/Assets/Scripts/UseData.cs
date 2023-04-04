@@ -17,15 +17,11 @@ public class UseData : MonoBehaviour
 
     void Awake()
     {
-        data = CSVReader.Read("udata");//udata is the name of the csv file 
+        data = CSVReader.Read("narrow_co2");//udata is the name of the csv file 
 
         for (var i = 0; i < data.Count; i++)
         {
-            //name, age, speed, description, is the headers of the database
-            print("name " + data[i]["name"] + " " +
-                   "age " + data[i]["age"] + " " +
-                   "speed " + data[i]["speed"] + " " +
-                   "desc " + data[i]["description"]);
+            print("CO2 (row " + i + ") " + data[i]["xco2"]);
         }
     }
 
@@ -33,9 +29,9 @@ public class UseData : MonoBehaviour
     {
         for (var i = 0; i < data.Count; i++)
         {
-            object age = data[i]["age"]; //get age data
-            cubeCount += (int)age; //convert age data to int and add to cubeCount
-            Debug.Log("cubeCount " +cubeCount);
+            object xco2 = data[i]["xco2"]; //get age data
+            cubeCount += (int)xco2; //convert age data to int and add to cubeCount
+            Debug.Log("cubeCount " + cubeCount);
         }
 
         InvokeRepeating("spawnObj", startDelay, timeInterval);
