@@ -30,8 +30,8 @@ public class UseData : MonoBehaviour
     {
         for (var i = 0; i < data.Count; i++)
         {
-            object age = data[i]["age"];//get age data
-            cubeCount += (int)age;//convert age data to int and add to cubeCount
+            object age = data[i]["age"]; //get age data
+            cubeCount += (int)age; //convert age data to int and add to cubeCount
             Debug.Log("cubeCount" +cubeCount);
         }
     }
@@ -43,6 +43,7 @@ public class UseData : MonoBehaviour
         {
             Instantiate(myCube);
             cubeCount--;
+            Debug.Log("cubeCount " + cubeCount);
         }
         
 
