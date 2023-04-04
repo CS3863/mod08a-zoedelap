@@ -32,20 +32,29 @@ public class UseData : MonoBehaviour
         {
             object age = data[i]["age"]; //get age data
             cubeCount += (int)age; //convert age data to int and add to cubeCount
-            Debug.Log("cubeCount" +cubeCount);
+            Debug.Log("cubeCount " +cubeCount);
         }
+
+        InvokeRepeating("spawnObj", 1.0f, 1.5f);
+
     }
 
     void Update()
     {
         //As long as cube count is not zero, instantiate prefab
-        while (cubeCount > 0)
-        {
+        // while (cubeCount > 0)
+        // {
+        //     Instantiate(myCube);
+        //     cubeCount--;
+        //     Debug.Log("cubeCount " + cubeCount);
+        // }
+    }
+
+    void spawnObj() {
+        if (cubeCount > 0) {
             Instantiate(myCube);
             cubeCount--;
-            Debug.Log("cubeCount " + cubeCount);
+            Debug.Log("cubeCount" + cubeCount);
         }
-        
-
     }
 }
