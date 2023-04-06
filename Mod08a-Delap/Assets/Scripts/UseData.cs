@@ -12,7 +12,7 @@ public class UseData : MonoBehaviour
     List<Dictionary<string, object>> data; 
 
     private float startDelay = 1.0f;
-    private float timeInterval = 0.5f;
+    private float timeInterval = 0.25f;
 
     private int rowCount = 0;
     private int rowMax;
@@ -42,7 +42,7 @@ public class UseData : MonoBehaviour
             // get and convert the value, increment rowCount for the next iteration
             tempObj = data[rowCount]["xco2"];
             tempFloat = System.Convert.ToSingle(tempObj);
-            Debug.Log("current tempFloat: " + tempFloat);
+            Debug.Log("current tempFloat: " + tempFloat + ", current row number: " + rowCount);
             rowCount++;
 
             // update the size of the item that this is attached to 
