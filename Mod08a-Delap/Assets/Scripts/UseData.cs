@@ -27,10 +27,10 @@ public class UseData : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("spawnObj", startDelay, timeInterval);
+        InvokeRepeating("modifyObj", startDelay, timeInterval);
     }
 
-    void spawnObj() {
-        
+    void modifyObj() {
+
     }
 }
