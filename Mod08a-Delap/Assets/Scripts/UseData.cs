@@ -25,7 +25,7 @@ public class UseData : MonoBehaviour
         data = CSVReader.Read("narrow_co2");
 
         rowMax = data.Count;
-
+        
         for (var i = 0; i < data.Count; i++)
         {
             print("CO2 (row " + i + ") " + data[i]["xco2"]);
@@ -41,7 +41,7 @@ public class UseData : MonoBehaviour
         if (rowCount < rowMax) {
             // get and convert the value, increment rowCount for the next iteration
             tempObj = data[rowCount]["xco2"];
-            tempFloat = System.Convert.ToSingle(tempObj);
+            tempFloat = System.Convert.ToSingle(tempObj)-350;
             Debug.Log("current tempFloat: " + tempFloat + ", current row number: " + rowCount);
             rowCount++;
 
